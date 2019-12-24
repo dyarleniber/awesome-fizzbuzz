@@ -1,0 +1,16 @@
+{
+    "name": "dyarleniber/awesome-php-fizzbuzz",
+    "description": "Applying Chain of Responsibility Pattern to develop FizzBuzz.",
+    "authors": [
+        {
+            "name": "Dyarlen Iber",
+            "email": "dyarlen1@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "FizzBuzz\\": "src/"
+        }
+    }
+}
