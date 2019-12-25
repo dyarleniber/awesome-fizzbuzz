@@ -1,15 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace FizzBuzz;
+namespace App;
 
-abstract class Handler implements IHandler
+abstract class Handler
 {
-    /**
-     * @var IHandler
-     */
-    private $nextHandler;
+    private ?Handler $nextHandler = null;
 
-    public function setNext(IHandler $handler): IHandler
+    final public function setNext(Handler $handler): Handler
     {
         $this->nextHandler = $handler;
 

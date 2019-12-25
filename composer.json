@@ -8,9 +8,17 @@
         }
     ],
     "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
     "autoload": {
         "psr-4": {
-            "FizzBuzz\\": "src/"
+            "App\\": "src/app/"
+        }
+    },
+    "autoload-dev": {
+        "prs-4": {
+            "Tests\\App\\": "tests/app/"
         }
     }
 }
