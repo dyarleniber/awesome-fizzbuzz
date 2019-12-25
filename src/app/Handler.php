@@ -1,10 +1,10 @@
-<?php declare(strict_types=1);
+<?php declare (strict_types = 1);
 
 namespace App;
 
 abstract class Handler
 {
-    private ?Handler $nextHandler = null;
+    private $nextHandler = null;
 
     final public function setNext(Handler $handler): Handler
     {
