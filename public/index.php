@@ -2,15 +2,12 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\BuzzHandler;
-use App\FizzBuzzHandler;
-use App\FizzHandler;
-use App\PlainNumberHandler;
+use App\Director;
+use App\FullBuilder;
 
-$chain = new FizzBuzzHandler();
-$chain->setNext(new BuzzHandler())
-    ->setNext(new FizzHandler())
-    ->setNext(new PlainNumberHandler());
+$chain = (new Director())->build(
+    new FullBuilder()
+);
 
 for ($i = 1; $i <= 100; $i++) {
     echo "{$chain->handle($i)} <br />";

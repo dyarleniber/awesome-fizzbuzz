@@ -1,6 +1,6 @@
 {
     "name": "dyarleniber/awesome-php-fizzbuzz",
-    "description": "Applying Chain of Responsibility Pattern to develop FizzBuzz.",
+    "description": "Applying Chain of Responsibility Pattern and Builder Pattern to develop FizzBuzz.",
     "authors": [
         {
             "name": "Dyarlen Iber",
