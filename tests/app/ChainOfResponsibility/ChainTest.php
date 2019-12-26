@@ -2,12 +2,11 @@
 
 namespace Tests\App;
 
-use App\Director;
-use App\FullBuilder;
-use App\Handle;
+use App\Builder\Director;
+use App\Builder\FullBuilder;
 use PHPUnit\Framework\TestCase;
 
-class ExampleTest extends TestCase
+class ChainTest extends TestCase
 {
     private $chain;
 
@@ -18,15 +17,10 @@ class ExampleTest extends TestCase
         );
     }
 
-    public function testCanBuildFullChain()
-    {
-        $this->assertInstanceOf(Handle::class, $this->chain);
-    }
-
     /**
      * @dataProvider additionProvider
      */
-    public function testHandler($request, $expected)
+    public function testHandlers($request, $expected)
     {
         $this->assertSame($expected, $this->chain->handle($request));
     }
