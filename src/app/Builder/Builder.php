@@ -1,6 +1,8 @@
 <?php declare (strict_types = 1);
 
-namespace App;
+namespace App\Builder;
+
+use App\ChainOfResponsibility\Handler;
 
 abstract class Builder
 {

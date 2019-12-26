@@ -1,13 +1,13 @@
 <?php declare (strict_types = 1);
 
-namespace App;
+namespace App\ChainOfResponsibility;
 
-class FizzBuzzHandler extends Handler
+class FizzHandler extends Handler
 {
     public function handle(int $request): ?string
     {
-        if ($request % 15 === 0) {
-            return "FizzBuzz";
+        if ($request % 3 === 0) {
+            return "Fizz";
         }
 
         return parent::handle($request);

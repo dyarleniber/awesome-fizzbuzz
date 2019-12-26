@@ -2,10 +2,9 @@
 
 namespace Tests\App;
 
-use App\BuzzHandler;
-use App\FizzBuzzHandler;
-use App\FizzHandler;
-use App\PlainNumberHandler;
+use App\Director;
+use App\FullBuilder;
+use App\Handle;
 use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
@@ -14,10 +13,14 @@ class ExampleTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->chain = new FizzBuzzHandler();
-        $this->chain->setNext(new BuzzHandler())
-            ->setNext(new FizzHandler())
-            ->setNext(new PlainNumberHandler());
+        $this->chain = (new Director())->build(
+            new FullBuilder()
+        );
+    }
+
+    public function testCanBuildFullChain()
+    {
+        $this->assertInstanceOf(Handle::class, $this->chain);
     }
 
     /**

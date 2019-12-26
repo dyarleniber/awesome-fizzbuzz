@@ -2,8 +2,8 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\Director;
-use App\FullBuilder;
+use App\Builder\Director;
+use App\Builder\FullBuilder;
 
 $chain = (new Director())->build(
     new FullBuilder()
