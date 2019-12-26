@@ -13,6 +13,11 @@ abstract class Handler
         return $handler;
     }
 
+    final public function getNext(): ?Handler
+    {
+        return $this->nextHandler;
+    }
+
     public function handle(int $request): ?string
     {
         if ($this->nextHandler) {
